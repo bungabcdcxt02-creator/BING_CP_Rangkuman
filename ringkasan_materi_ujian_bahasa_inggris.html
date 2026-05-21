@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ringkasan Materi PSKA – Bahasa Inggris SD</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d1117;
+    --surface: #161b22;
+    --card: #1c2230;
+    --border: #2a3347;
+    --accent: #f0a500;
+    --accent2: #4fc3f7;
+    --accent3: #81c784;
+    --accent4: #f48fb1;
+    --accent5: #ce93d8;
+    --text: #e6edf3;
+    --muted: #8b949e;
+    --tag-bg: rgba(240,165,0,0.12);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    min-height: 100vh;
+    line-height: 1.7;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, #0d1117 0%, #131a26 50%, #0d1117 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 60px 40px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 340px; height: 340px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(240,165,0,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; left: -60px;
+    width: 260px; height: 260px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(79,195,247,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-inner { max-width: 900px; margin: 0 auto; position: relative; z-index: 1; }
+  .hero-badge {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid rgba(240,165,0,0.35);
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 5vw, 48px);
+    font-weight: 900;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 14px;
+  }
+  .hero h1 span { color: var(--accent); }
+  .hero p {
+    color: var(--muted);
+    font-size: 15px;
+    max-width: 560px;
+  }
+  .hero-meta {
+    display: flex; flex-wrap: wrap; gap: 24px;
+    margin-top: 32px;
+  }
+  .meta-item {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 13px; color: var(--muted);
+  }
+  .meta-item strong { color: var(--text); font-weight: 500; }
+  .meta-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--accent); flex-shrink: 0;
+  }
+
+  /* ── MAIN LAYOUT ── */
+  main { max-width: 960px; margin: 0 auto; padding: 48px 24px 80px; }
+
+  /* ── SECTION HEADER ── */
+  .section-header {
+    display: flex; align-items: center; gap: 14px;
+    margin-bottom: 28px; margin-top: 52px;
+  }
+  .section-header:first-child { margin-top: 0; }
+  .section-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .section-line { flex: 1; height: 1px; background: var(--border); }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  /* ── CARDS ── */
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 18px; }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color .2s, transform .2s;
+  }
+  .card:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--card-accent, var(--accent));
+  }
+
+  .card-class {
+    font-size: 10px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--card-accent, var(--accent));
+    margin-bottom: 8px;
+  }
+  .card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+  .card p { font-size: 13.5px; color: var(--muted); margin-bottom: 16px; line-height: 1.65; }
+
+  .tag-list { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag {
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    background: var(--tag-bg);
+    color: var(--card-accent, var(--accent));
+    border: 1px solid rgba(240,165,0,0.2);
+    font-weight: 500;
+  }
+
+  /* ── TOPIC INDICATORS ── */
+  .topic-row {
+    display: flex; align-items: flex-start; gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+    animation: fadeIn .4s ease both;
+  }
+  .topic-row:last-child { border-bottom: none; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; } }
+
+  .topic-icon {
+    width: 36px; height: 36px; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 17px; flex-shrink: 0;
+    background: rgba(255,255,255,0.04);
+  }
+  .topic-content { flex: 1; }
+  .topic-title { font-size: 14px; font-weight: 500; margin-bottom: 3px; }
+  .topic-desc { font-size: 12.5px; color: var(--muted); }
+
+  /* ── SOAL BREAKDOWN TABLE ── */
+  .breakdown {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 10px;
+  }
+  .breakdown table { width: 100%; border-collapse: collapse; }
+  .breakdown thead tr { background: rgba(255,255,255,0.03); }
+  .breakdown th {
+    text-align: left;
+    font-size: 11px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 600;
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--border);
+  }
+  .breakdown td {
+    font-size: 13px;
+    padding: 12px 18px;
+    border-bottom: 1px solid rgba(42,51,71,0.5);
+    vertical-align: middle;
+  }
+  .breakdown tr:last-child td { border-bottom: none; }
+  .breakdown tr:hover td { background: rgba(255,255,255,0.02); }
+
+  .pill {
+    display: inline-block;
+    padding: 2px 9px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+  .pill-kelas5 { background: rgba(79,195,247,0.15); color: var(--accent2); }
+  .pill-kelas6 { background: rgba(129,199,132,0.15); color: var(--accent3); }
+
+  .bentuk-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    margin-right: 3px;
+    margin-bottom: 2px;
+  }
+  .b-bs  { background: rgba(240,165,0,.15); color: var(--accent); }
+  .b-pg  { background: rgba(79,195,247,.15); color: var(--accent2); }
+  .b-pgk { background: rgba(129,199,132,.15); color: var(--accent3); }
+  .b-mj  { background: rgba(206,147,216,.15); color: var(--accent5); }
+  .b-is  { background: rgba(244,143,177,.15); color: var(--accent4); }
+  .b-ut  { background: rgba(255,255,255,.08); color: #ccc; }
+
+  /* ── TIPS BOX ── */
+  .tip-box {
+    margin-top: 48px;
+    border: 1px solid rgba(240,165,0,.25);
+    border-radius: 12px;
+    padding: 28px 32px;
+    background: linear-gradient(135deg, rgba(240,165,0,.05), rgba(240,165,0,.02));
+    position: relative;
+  }
+  .tip-box::before {
+    content: '💡';
+    font-size: 24px;
+    position: absolute;
+    top: -14px; left: 24px;
+    background: var(--bg); padding: 0 6px;
+  }
+  .tip-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px; font-weight: 700;
+    color: var(--accent); margin-bottom: 14px;
+  }
+  .tip-box ul { list-style: none; }
+  .tip-box li {
+    padding: 7px 0;
+    font-size: 13.5px; color: var(--muted);
+    border-bottom: 1px dashed rgba(42,51,71,.6);
+    display: flex; align-items: flex-start; gap: 10px;
+  }
+  .tip-box li:last-child { border-bottom: none; }
+  .tip-box li::before { content: '→'; color: var(--accent); flex-shrink: 0; font-weight: 600; }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center;
+    padding: 32px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 12px;
+    letter-spacing: .04em;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    .hero { padding: 40px 20px 36px; }
+    main { padding: 32px 16px 60px; }
+    .hero-meta { gap: 16px; flex-direction: column; }
+    .cards { grid-template-columns: 1fr; }
+    .breakdown th, .breakdown td { padding: 10px 12px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">Kisi-Kisi PSKA 2025/2026</div>
+    <h1>Ringkasan Materi Ujian<br><span>Bahasa Inggris</span></h1>
+    <p>Penilaian Sumatif Kelas Akhir (PSKA) — Sekolah Dasar Kecamatan Cipayung, Tahun Pelajaran 2025/2026</p>
+    <div class="hero-meta">
+      <div class="meta-item"><div class="meta-dot"></div><span>Kelas <strong>5 &amp; 6 SD</strong></span></div>
+      <div class="meta-item"><div class="meta-dot" style="background:var(--accent2)"></div><span>Jumlah Soal <strong>30 Soal</strong></span></div>
+      <div class="meta-item"><div class="meta-dot" style="background:var(--accent3)"></div><span>Alokasi Waktu <strong>90 – 120 Menit</strong></span></div>
+      <div class="meta-item"><div class="meta-dot" style="background:var(--accent4)"></div><span><strong>6 Bentuk Soal</strong> (BS, PG, PGK, MJ, IS, UT)</span></div>
+    </div>
+  </div>
+</div>
+
+<main>
+
+  <!-- ============ KELAS 5 ============ -->
+  <div class="section-header">
+    <span class="section-num">Kelas 5</span>
+    <div class="section-line"></div>
+    <span class="section-title">Materi Ujian</span>
+  </div>
+
+  <div class="cards">
+
+    <div class="card" style="--card-accent: var(--accent2); --tag-bg: rgba(79,195,247,0.1);">
+      <div class="card-class">Kelas 5 · Food &amp; Drinks</div>
+      <h3>Tastes, Prices &amp; Quantities</h3>
+      <p>Mengenal dan mengomunikasikan rasa makanan &amp; minuman (sweet, sour, salty, bitter), serta harga-harga di kantin dan restoran. Termasuk <em>quantifying nouns</em>.</p>
+      <div class="tag-list">
+        <span class="tag">Sweet / Sour / Salty / Bitter</span>
+        <span class="tag">Harga makanan</span>
+        <span class="tag">Quantifying Nouns</span>
+      </div>
+    </div>
+
+    <div class="card" style="--card-accent: var(--accent3); --tag-bg: rgba(129,199,132,0.1);">
+      <div class="card-class">Kelas 5 · Grammar</div>
+      <h3>Comparative &amp; Superlative Degree</h3>
+      <p>Membuat dan memahami kalimat perbandingan dua benda (<em>comparative</em>) dan tiga benda (<em>superlative</em>). Mampu menyusun kalimat acak &amp; mengartikannya ke Bahasa Indonesia.</p>
+      <div class="tag-list">
+        <span class="tag">Comparative (-er / more)</span>
+        <span class="tag">Superlative (-est / most)</span>
+        <span class="tag">Ukuran &amp; Usia</span>
+      </div>
+    </div>
+
+    <div class="card" style="--card-accent: var(--accent5); --tag-bg: rgba(206,147,216,0.1);">
+      <div class="card-class">Kelas 5 · Vocabulary</div>
+      <h3>Parts of Body &amp; Clothes</h3>
+      <p>Mengidentifikasi bagian tubuh beserta fungsinya. Menganalisis jenis-jenis pakaian yang digunakan sehari-hari berdasarkan konteks dialog atau gambar.</p>
+      <div class="tag-list">
+        <span class="tag">Parts of Body</span>
+        <span class="tag">Body Functions</span>
+        <span class="tag">Types of Clothes</span>
+      </div>
+    </div>
+
+    <div class="card" style="--card-accent: var(--accent); --tag-bg: rgba(240,165,0,0.1);">
+      <div class="card-class">Kelas 5 · Numbers</div>
+      <h3>Cardinal &amp; Ordinal Numbers</h3>
+      <p>Menjelaskan bilangan kardinal dan ordinal, serta melakukan operasi hitung penjumlahan dan pengurangan dalam Bahasa Inggris.</p>
+      <div class="tag-list">
+        <span class="tag">Cardinal Numbers</span>
+        <span class="tag">Ordinal Numbers</span>
+        <span class="tag">Penjumlahan &amp; Pengurangan</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ============ KELAS 6 ============ -->
+  <div class="section-header">
+    <span class="section-num">Kelas 6</span>
+    <div class="section-line"></div>
+    <span class="section-title">Materi Ujian</span>
+  </div>
+
+  <div class="cards">
+
+    <div class="card" style="--card-accent: #ff8a65; --tag-bg: rgba(255,138,101,0.1);">
+      <div class="card-class">Kelas 6 · Tenses</div>
+      <h3>Simple Past Tense (Verb 2)</h3>
+      <p>Mengidentifikasi dan menggunakan kata kerja lampau (V2) dalam kalimat. Memahami penggunaan <em>was/were</em> untuk mengekspresikan perasaan di masa lampau.</p>
+      <div class="tag-list">
+        <span class="tag">Verb 2 (past form)</span>
+        <span class="tag">Was / Were</span>
+        <span class="tag">Past Activities</span>
+        <span class="tag">Feelings (past)</span>
+      </div>
+    </div>
+
+    <div class="card" style="--card-accent: var(--accent4); --tag-bg: rgba(244,143,177,0.1);">
+      <div class="card-class">Kelas 6 · Tenses</div>
+      <h3>Simple Future Tense</h3>
+      <p>Mengomunikasikan kegiatan di waktu yang akan datang. Mengenali dan menggunakan <em>adverb of time</em> future (tomorrow, next week, dll.) dalam kalimat dan dialog.</p>
+      <div class="tag-list">
+        <span class="tag">Will / Be going to</span>
+        <span class="tag">Adverb of Time (future)</span>
+        <span class="tag">Future Activities</span>
+      </div>
+    </div>
+
+    <div class="card" style="--card-accent: var(--accent3); --tag-bg: rgba(129,199,132,0.1);">
+      <div class="card-class">Kelas 6 · Vocabulary</div>
+      <h3>Feelings &amp; Emotions</h3>
+      <p>Mengidentifikasi perasaan seseorang melalui gambar atau ilustrasi. Menentukan ungkapan perasaan yang tepat berdasarkan situasi yang disajikan.</p>
+      <div class="tag-list">
+        <span class="tag">Happy / Sad / Tired</span>
+        <span class="tag">Sleepy / Angry</span>
+        <span class="tag">Expressions of Feeling</span>
+      </div>
+    </div>
+
+    <div class="card" style="--card-accent: var(--accent2); --tag-bg: rgba(79,195,247,0.1);">
+      <div class="card-class">Kelas 6 · Writing</div>
+      <h3>Dreams &amp; Occupations</h3>
+      <p>Menulis dan mempresentasikan cita-cita. Mendeskripsikan berbagai profesi dan tempat kerjanya. Menyusun kalimat acak &amp; menerjemahkan ke Bahasa Indonesia.</p>
+      <div class="tag-list">
+        <span class="tag">Professions</span>
+        <span class="tag">Workplace</span>
+        <span class="tag">My Dream</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ============ DISTRIBUSI SOAL ============ -->
+  <div class="section-header">
+    <span class="section-num">Distribusi</span>
+    <div class="section-line"></div>
+    <span class="section-title">Soal per Topik &amp; Bentuk</span>
+  </div>
+
+  <div class="breakdown">
+    <table>
+      <thead>
+        <tr>
+          <th>Materi / Topik</th>
+          <th>Kelas</th>
+          <th>Bentuk Soal</th>
+          <th>No. Soal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Tastes &amp; Food</strong><br><small style="color:var(--muted)">Rasa makanan &amp; minuman</small></td>
+          <td><span class="pill pill-kelas5">5</span></td>
+          <td>
+            <span class="bentuk-badge b-bs">BS</span>
+            <span class="bentuk-badge b-pgk">PGK</span>
+            <span class="bentuk-badge b-mj">MJ</span>
+          </td>
+          <td>1, 2, 3, 11, 16</td>
+        </tr>
+        <tr>
+          <td><strong>Prices</strong><br><small style="color:var(--muted)">Harga makanan &amp; minuman</small></td>
+          <td><span class="pill pill-kelas5">5</span></td>
+          <td>
+            <span class="bentuk-badge b-pg">PG</span>
+            <span class="bentuk-badge b-pgk">PGK</span>
+            <span class="bentuk-badge b-ut">UT</span>
+          </td>
+          <td>6, 7, 11, 12, 26</td>
+        </tr>
+        <tr>
+          <td><strong>Comparative &amp; Superlative</strong><br><small style="color:var(--muted)">Perbandingan 2 &amp; 3 benda</small></td>
+          <td><span class="pill pill-kelas5">5</span></td>
+          <td>
+            <span class="bentuk-badge b-pgk">PGK</span>
+            <span class="bentuk-badge b-is">IS</span>
+            <span class="bentuk-badge b-ut">UT</span>
+          </td>
+          <td>12, 21, 22, 26, 27</td>
+        </tr>
+        <tr>
+          <td><strong>Parts of Body</strong><br><small style="color:var(--muted)">Bagian tubuh &amp; fungsinya</small></td>
+          <td><span class="pill pill-kelas5">5</span></td>
+          <td>
+            <span class="bentuk-badge b-pg">PG</span>
+            <span class="bentuk-badge b-is">IS</span>
+          </td>
+          <td>7, 22</td>
+        </tr>
+        <tr>
+          <td><strong>Clothes</strong><br><small style="color:var(--muted)">Jenis pakaian</small></td>
+          <td><span class="pill pill-kelas5">5</span></td>
+          <td>
+            <span class="bentuk-badge b-pg">PG</span>
+            <span class="bentuk-badge b-mj">MJ</span>
+            <span class="bentuk-badge b-ut">UT</span>
+          </td>
+          <td>6, 17, 27</td>
+        </tr>
+        <tr>
+          <td><strong>Numbers (Cardinal &amp; Ordinal)</strong><br><small style="color:var(--muted)">Bilangan &amp; operasi hitung</small></td>
+          <td><span class="pill pill-kelas5">5</span></td>
+          <td>
+            <span class="bentuk-badge b-mj">MJ</span>
+          </td>
+          <td>16, 17</td>
+        </tr>
+        <tr>
+          <td><strong>Simple Past Tense (Verb 2)</strong><br><small style="color:var(--muted)">Kegiatan masa lampau</small></td>
+          <td><span class="pill pill-kelas6">6</span></td>
+          <td>
+            <span class="bentuk-badge b-bs">BS</span>
+            <span class="bentuk-badge b-pg">PG</span>
+            <span class="bentuk-badge b-pgk">PGK</span>
+            <span class="bentuk-badge b-mj">MJ</span>
+            <span class="bentuk-badge b-is">IS</span>
+            <span class="bentuk-badge b-ut">UT</span>
+          </td>
+          <td>3, 4, 5, 8, 9, 10, 13, 14, 18, 23, 28</td>
+        </tr>
+        <tr>
+          <td><strong>Was / Were</strong><br><small style="color:var(--muted)">Perasaan di masa lampau</small></td>
+          <td><span class="pill pill-kelas6">6</span></td>
+          <td>
+            <span class="bentuk-badge b-mj">MJ</span>
+          </td>
+          <td>19</td>
+        </tr>
+        <tr>
+          <td><strong>Feelings &amp; Emotions</strong><br><small style="color:var(--muted)">Ekspresi perasaan</small></td>
+          <td><span class="pill pill-kelas6">6</span></td>
+          <td>
+            <span class="bentuk-badge b-pgk">PGK</span>
+          </td>
+          <td>13, 14, 15</td>
+        </tr>
+        <tr>
+          <td><strong>Simple Future Tense</strong><br><small style="color:var(--muted)">Kegiatan masa depan</small></td>
+          <td><span class="pill pill-kelas6">6</span></td>
+          <td>
+            <span class="bentuk-badge b-bs">BS</span>
+            <span class="bentuk-badge b-pg">PG</span>
+            <span class="bentuk-badge b-pgk">PGK</span>
+            <span class="bentuk-badge b-mj">MJ</span>
+            <span class="bentuk-badge b-is">IS</span>
+            <span class="bentuk-badge b-ut">UT</span>
+          </td>
+          <td>5, 9, 15, 18, 19, 20, 24, 25, 29</td>
+        </tr>
+        <tr>
+          <td><strong>Dreams &amp; Occupations</strong><br><small style="color:var(--muted)">Cita-cita &amp; profesi</small></td>
+          <td><span class="pill pill-kelas6">6</span></td>
+          <td>
+            <span class="bentuk-badge b-pg">PG</span>
+            <span class="bentuk-badge b-mj">MJ</span>
+            <span class="bentuk-badge b-ut">UT</span>
+          </td>
+          <td>10, 20, 28, 29, 30</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ============ KETERANGAN BENTUK SOAL ============ -->
+  <div class="section-header" style="margin-top: 48px;">
+    <span class="section-num">Bentuk Soal</span>
+    <div class="section-line"></div>
+    <span class="section-title">Keterangan &amp; Skor</span>
+  </div>
+
+  <div class="breakdown">
+    <table>
+      <thead>
+        <tr>
+          <th>Kode</th>
+          <th>Nama</th>
+          <th>Keterangan</th>
+          <th>Skor</th>
+          <th>Jumlah</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="bentuk-badge b-bs">BS</span></td>
+          <td>Benar / Salah</td>
+          <td>2 pernyataan per soal</td>
+          <td>2</td>
+          <td>5 soal</td>
+        </tr>
+        <tr>
+          <td><span class="bentuk-badge b-pg">PG</span></td>
+          <td>Pilihan Ganda</td>
+          <td>1 pilihan jawaban benar</td>
+          <td>1</td>
+          <td>5 soal</td>
+        </tr>
+        <tr>
+          <td><span class="bentuk-badge b-pgk">PGK</span></td>
+          <td>PG Kompleks</td>
+          <td>2 jawaban benar</td>
+          <td>2</td>
+          <td>5 soal</td>
+        </tr>
+        <tr>
+          <td><span class="bentuk-badge b-mj">MJ</span></td>
+          <td>Menjodohkan</td>
+          <td>1 soal, 2 pernyataan</td>
+          <td>2</td>
+          <td>5 soal</td>
+        </tr>
+        <tr>
+          <td><span class="bentuk-badge b-is">IS</span></td>
+          <td>Isian Singkat</td>
+          <td>Melengkapi kalimat rumpang</td>
+          <td>2</td>
+          <td>5 soal</td>
+        </tr>
+        <tr>
+          <td><span class="bentuk-badge b-ut">UT</span></td>
+          <td>Uraian / Tulis</td>
+          <td>Jawaban panjang / menyusun kalimat</td>
+          <td>3</td>
+          <td>5 soal</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ============ TIPS BELAJAR ============ -->
+  <div class="tip-box">
+    <h3>Tips Belajar Menjelang Ujian</h3>
+    <ul>
+      <li>Hafal kosakata rasa makanan: <em>sweet, sour, salty, bitter</em> dan contoh makanan/minumannya.</li>
+      <li>Kuasai pola <em>comparative</em> (adj + <strong>-er</strong> / <strong>more</strong> + adj + <em>than</em>) dan <em>superlative</em> (the + adj + <strong>-est</strong> / the <strong>most</strong> + adj).</li>
+      <li>Pelajari daftar <em>Verb 2</em> (irregular &amp; regular verbs) karena soal Simple Past Tense paling banyak (11 soal).</li>
+      <li>Latih menyusun kalimat acak — ini sering muncul di soal UT dan PG untuk materi Past &amp; Future Tense.</li>
+      <li>Kenali kata keterangan waktu future: <em>tomorrow, next week, next year, this afternoon</em>, dll.</li>
+      <li>Untuk soal UT (uraian), pastikan bisa mendeskripsikan cita-cita dan profesi dalam kalimat lengkap.</li>
+    </ul>
+  </div>
+
+</main>
+
+<footer>
+  Ringkasan ini dibuat berdasarkan Kisi-Kisi PSKA Bahasa Inggris SD Kecamatan Cipayung — Tahun Pelajaran 2025/2026
+</footer>
+
+</body>
+</html>
